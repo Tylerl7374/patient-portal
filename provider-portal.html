@@ -1,0 +1,12 @@
+const providerLogin = () => {
+    const username = document.getElementById('provider-username').value;
+    const password = document.getElementById('provider-password').value;
+
+    // Simulated login (these are the valid credentials)
+    if (username === 'provider' && password === 'securepassword') {
+        alert('Provider Login Successful!');
+        window.location.href = 'provider-dashboard.html';  // Redirect to dashboard
+    } else {
+        alert('Invalid Login. Please try again.');
+    }
+};

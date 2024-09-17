@@ -68,10 +68,10 @@
         <h1>MyChart - Patient Portal</h1>
     </header>
 
-    <!-- Navigation Links for Provider Login -->
+    <!-- Navigation Links for Patient and Provider Login -->
     <nav>
-        <a href="index.html">Patient Portal</a>
-        <a href="provider-portal.html">Provider Portal</a> <!-- Link to Provider Login -->
+        <a href="patient-dashboard.html">Patient Portal</a>
+        <a href="provider-portal.html">Provider Portal</a> <!-- Link to Provider Portal -->
     </nav>
 
     <div class="container">
@@ -92,10 +92,9 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Hardcoded login for simplicity
             if (username === 'patient' && password === 'password123') {
                 alert('Login successful!');
-                window.location.href = 'patient/patient-dashboard.html';  // Redirect to patient dashboard in /patient folder
+                window.location.href = "patient-dashboard.html"; // Redirect to patient dashboard
             } else {
                 alert('Invalid login');
             }

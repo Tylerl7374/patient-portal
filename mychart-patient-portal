@@ -17,6 +17,17 @@
             padding: 10px 20px;
             text-align: center;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #0073b7;
+            text-decoration: none;
+            font-weight: bold;
+        }
         .container {
             width: 90%;
             margin: 20px auto;
@@ -31,7 +42,7 @@
         .section {
             margin-bottom: 40px;
         }
-        form input, form textarea {
+        input, textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -52,88 +63,43 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>MyChart - Patient Portal</h1>
     </header>
 
+    <!-- Navigation Links for Provider Login -->
+    <nav>
+        <a href="index.html">Patient Portal</a>
+        <a href="provider-login.html">Provider Login</a> <!-- Link to Provider Login -->
+    </nav>
+
     <div class="container">
-        <!-- Login Section -->
+        <!-- Patient Login Section -->
         <div class="section">
-            <h2>Login</h2>
+            <h2>Login to Your Account</h2>
             <form id="login-form">
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="password" id="password" placeholder="Password" required>
                 <button type="button" onclick="login()">Login</button>
             </form>
         </div>
-
-        <!-- Appointment Section -->
-        <div class="section" id="appointment-section" style="display:none;">
-            <h2>Upcoming Appointments</h2>
-            <ul id="appointment-list"></ul>
-            <button onclick="scheduleAppointment()">Schedule New Appointment</button>
-        </div>
-
-        <!-- Messages Section -->
-        <div class="section" id="messages-section" style="display:none;">
-            <h2>Messages</h2>
-            <textarea id="message-content" placeholder="Write your message..."></textarea>
-            <button onclick="sendMessage()">Send Message</button>
-            <div id="message-list"></div>
-        </div>
-
-        <!-- Prescription Refills Section -->
-        <div class="section" id="refills-section" style="display:none;">
-            <h2>Request Prescription Refill</h2>
-            <form id="refill-form">
-                <input type="text" id="medication" placeholder="Medication Name" required>
-                <input type="number" id="quantity" placeholder="Quantity" required>
-                <button type="button" onclick="requestRefill()">Request Refill</button>
-            </form>
-        </div>
     </div>
 
     <script>
-        // Simple JavaScript to simulate login
+        // Simulated Login Function for Patients
         const login = () => {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
             if (username === 'patient' && password === 'password123') {
                 alert('Login successful!');
-                document.getElementById('appointment-section').style.display = 'block';
-                document.getElementById('messages-section').style.display = 'block';
-                document.getElementById('refills-section').style.display = 'block';
+                // Redirect to patient dashboard or show more sections
             } else {
                 alert('Invalid login');
             }
         };
-
-        // Simulate scheduling an appointment
-        const scheduleAppointment = () => {
-            const appointmentList = document.getElementById('appointment-list');
-            const appointment = 'New Appointment: 04/25/2024 at 2:00 PM';
-            const li = document.createElement('li');
-            li.textContent = appointment;
-            appointmentList.appendChild(li);
-        };
-
-        // Simulate sending a message
-        const sendMessage = () => {
-            const messageContent = document.getElementById('message-content').value;
-            const messageList = document.getElementById('message-list');
-            const p = document.createElement('p');
-            p.textContent = `Message: ${messageContent}`;
-            messageList.appendChild(p);
-            alert('Message sent!');
-        };
-
-        // Simulate requesting a prescription refill
-        const requestRefill = () => {
-            const medication = document.getElementById('medication').value;
-            const quantity = document.getElementById('quantity').value;
-            alert(`Refill requested for ${medication}, Quantity: ${quantity}`);
-        };
     </script>
+
 </body>
 </html>

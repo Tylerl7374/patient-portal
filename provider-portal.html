@@ -1,12 +1,58 @@
-const providerLogin = () => {
-    const username = document.getElementById('provider-username').value;
-    const password = document.getElementById('provider-password').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Login</title>
+    <style>
+        /* Your CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Provider Login</h1>
 
-    // Simulated login (these are the valid credentials)
-    if (username === 'provider' && password === 'securepassword') {
-        alert('Provider Login Successful!');
-        window.location.href = 'provider-dashboard.html';  // Redirect to dashboard
-    } else {
-        alert('Invalid Login. Please try again.');
-    }
-};
+    <form id="provider-login-form">
+        <input type="text" id="provider-username" placeholder="Provider Username" required>
+        <input type="password" id="provider-password" placeholder="Provider Password" required>
+        <button type="button" onclick="providerLogin()">Login</button>
+    </form>
+
+    <script>
+        // JavaScript code wrapped in <script> tags
+        const providerLogin = () => {
+            const username = document.getElementById('provider-username').value;
+            const password = document.getElementById('provider-password').value;
+
+            // Simulated login (these are the valid credentials)
+            if (username === 'provider' && password === 'securepassword') {
+                alert('Provider Login Successful!');
+                window.location.href = 'provider-dashboard.html';  // Redirect to dashboard
+            } else {
+                alert('Invalid Login. Please try again.');
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    clinic_code TEXT NOT NULL
+);
+
+CREATE TABLE clinic_codes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    clinic_code TEXT NOT NULL UNIQUE
+);
+
+INSERT INTO clinic_codes (clinic_code) VALUES ('ABC123');
+INSERT INTO clinic_codes (clinic_code) VALUES ('XYZ789');

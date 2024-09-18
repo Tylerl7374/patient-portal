@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+</head>
+<body>
+    <h1>Register for Patient Portal</h1>
+    <form id="registration-form">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" required><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" required><br>
+
+        <label for="clinic-code">Clinic Code:</label><br>
+        <input type="text" id="clinic-code" required><br><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const clinicCode = document.getElementById("clinic-code").value;
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password, clinicCode })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === "Registration successful") {
+                    alert("Account created successfully!");
+                } else {
+                    alert("Error: " + data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

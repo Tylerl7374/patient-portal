@@ -30,3 +30,51 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - MyChart</title>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Your Dashboard, {{ session['username'] }}</h1> <!-- Greet logged-in user -->
+    </header>
+
+    <div class="container">
+        <div class="section card">
+            <h2>Messages</h2>
+            <p>You have 3 new messages from your provider.</p>
+            <button>View Messages</button>
+        </div>
+
+        <div class="section card">
+            <h2>Prescription Refills</h2>
+            <p>Refill your prescriptions here.</p>
+            <button>Request Refill</button>
+        </div>
+
+        <div class="section card">
+            <h2>Appointments</h2>
+            <p>Your next appointment is on: <strong>September 25, 2024</strong></p>
+            <button>View Appointments</button>
+        </div>
+
+        <div class="section card">
+            <h2>Last Visit Summary</h2>
+            <p>Summary of your last visit: <br><strong>Diagnosis: Hypertension</strong><br><strong>Treatment Plan: Medication Adjustment</strong></p>
+            <button>View Full Summary</button>
+        </div>
+
+        <div class="section card">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -39,20 +39,17 @@ def register():
 
     return render_template('register.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        user = User.query.filter_by(username=username, password=password).first()
+    username = request.form['username']
+    password = request.form['password']
+    user = User.query.filter_by(username=username, password=password).first()
 
-        if user:
-            session['username'] = user.username
-            return "Logged in successfully!"
-        else:
-            return "Invalid credentials", 400
-
-    return render_template('login.html')
+    if user:
+        session['username'] = user.username
+        return redirect(url_for('dashboard'))
+    else:
+        return "Invalid login", 400
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,56 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Provider Login</title>
+    <title>Provider Portal - MyChart</title>
     <style>
-        /* Your CSS styles */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
         }
-        h1 {
-            color: #333;
+        header {
+            background-color: #0073b7;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
         }
-        input {
-            padding: 10px;
-            margin: 10px 0;
-            width: 100%;
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #0073b7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         button {
-            padding: 10px;
-            background-color: #007bff;
+            background-color: #0073b7;
             color: white;
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #005fa3;
         }
     </style>
 </head>
 <body>
-    <h1>Provider Login</h1>
 
-    <form id="provider-login-form">
-        <input type="text" id="provider-username" placeholder="Provider Username" required>
-        <input type="password" id="provider-password" placeholder="Provider Password" required>
-        <button type="button" onclick="providerLogin()">Login</button>
-    </form>
+    <header>
+        <h1>MyChart - Provider Portal</h1>
+    </header>
 
-    <script>
-        // JavaScript code wrapped in <script> tags
-        const providerLogin = () => {
-            const username = document.getElementById('provider-username').value;
-            const password = document.getElementById('provider-password').value;
+    <!-- Provider Portal Sections -->
+    <div class="container">
+        <!-- Manage Medications Section -->
+        <div class="section card">
+            <h2>Manage Medications</h2>
+            <p>Update and prescribe medications for your patients.</p>
+            <button>Manage Meds</button>
+        </div>
 
-            // Simulated login (these are the valid credentials)
-            if (username === 'provider' && password === 'securepassword') {
-                alert('Provider Login Successful!');
-                window.location.href = 'provider/provider-dashboard.html';  // Redirect to new folder for dashboard
-            } else {
-                alert('Invalid Login. Please try again.');
-            }
-        };
-    </script>
+        <!-- Communication Section -->
+        <div class="section card">
+            <h2>Communication with Patients</h2>
+            <p>Send messages to your patients.</p>
+            <button>Open Messages</button>
+        </div>
+
+        <!-- View Appointments Section -->
+        <div class="section card">
+            <h2>Appointments</h2>
+            <p>View and manage patient appointments.</p>
+            <button>View Appointments</button>
+        </div>
+    </div>
+
 </body>
 </html>
